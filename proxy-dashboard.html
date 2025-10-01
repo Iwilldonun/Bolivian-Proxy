@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; background: #181a20; color: #f1f1f1; margin: 0; }
+        .dashboard { max-width: 900px; margin: 40px auto; background: #23272f; border-radius: 12px; box-shadow: 0 2px 16px #0008; padding: 32px; }
+        h1 { text-align: center; margin-bottom: 32px; }
+        .features { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
+        .card { background: #292d36; border-radius: 10px; padding: 24px; flex: 1 1 260px; min-width: 260px; max-width: 320px; box-shadow: 0 1px 8px #0004; }
+        .card h2 { margin-top: 0; font-size: 1.3em; }
+        .card .icon { font-size: 2em; margin-bottom: 12px; color: #eb51ff; }
+        .status { margin: 16px 0; font-weight: bold; }
+        .logs { background: #181a20; border-radius: 6px; padding: 12px; height: 100px; overflow-y: auto; font-size: 0.95em; }
+        .btn { background: #eb51ff; color: #fff; border: none; border-radius: 5px; padding: 8px 18px; margin: 8px 0; cursor: pointer; font-weight: bold; }
+        .btn:active { background: #c13be0; }
+        .app-list { list-style: none; padding: 0; margin: 0; }
+        .app-list li { margin: 8px 0; }
+        .vm-placeholder { background: #23272f; border: 2px dashed #eb51ff; border-radius: 8px; padding: 24px; text-align: center; color: #eb51ff; margin-top: 12px; }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h1><i class="fa-solid fa-shield-halved"></i> Proxy Dashboard</h1>
+        <div class="features">
+            <!-- Anonymous Browsing -->
+            <div class="card">
+                <div class="icon"><i class="fa-solid fa-user-secret"></i></div>
+                <h2>Anonymous Browsing</h2>
+                <form onsubmit="alert('This is a placeholder. Backend required.'); return false;">
+                    <input type="url" placeholder="Enter URL" style="width: 80%; padding: 6px; border-radius: 4px; border: none;">
+                    <button class="btn" type="submit">Go</button>
+                </form>
+            </div>
+            <!-- Firewall Function -->
+            <div class="card">
+                <div class="icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                <h2>Firewall</h2>
+                <div class="status">Status: <span style="color:#eb51ff">Active</span></div>
+                <input type="text" placeholder="Block domain/IP" style="width: 70%; padding: 6px; border-radius: 4px; border: none;">
+                <button class="btn" onclick="alert('This is a placeholder. Backend required.');">Block</button>
+            </div>
+            <!-- Threat Protection -->
+            <div class="card">
+                <div class="icon"><i class="fa-solid fa-bug-slash"></i></div>
+                <h2>Threat Protection</h2>
+                <div class="status">Status: <span style="color:#eb51ff">Enabled</span></div>
+                <button class="btn" onclick="alert('This is a placeholder. Backend required.');">Toggle</button>
+            </div>
+            <!-- App Store -->
+            <div class="card">
+                <div class="icon"><i class="fa-solid fa-store"></i></div>
+                <h2>App Store</h2>
+                <ul class="app-list">
+                    <li>App 1 <button class="btn" onclick="alert('Install placeholder')">Install</button></li>
+                    <li>App 2 <button class="btn" onclick="alert('Install placeholder')">Install</button></li>
+                    <li>App 3 <button class="btn" onclick="alert('Install placeholder')">Install</button></li>
+                </ul>
+            </div>
+            <!-- Virtual Machine -->
+            <div class="card">
+                <div class="icon"><i class="fa-solid fa-desktop"></i></div>
+                <h2>Virtual Machine</h2>
+                <div class="vm-placeholder">VM UI Placeholder<br><small>(Requires backend integration)</small></div>
+                <button class="btn" onclick="alert('This is a placeholder. Backend required.');">Launch VM</button>
+            </div>
+        </div>
+        <!-- Proxy Logs -->
+        <div class="card" style="margin: 32px auto 0 auto; max-width: 700px;">
+            <div class="icon"><i class="fa-solid fa-scroll"></i></div>
+            <h2>Proxy Logs</h2>
+            <div class="logs" id="logs">
+                <div>[12:00] Proxy started on port 8080</div>
+                <div>[12:01] Request to example.com</div>
+                <div>[12:02] Threat detected: Blocked suspicious IP</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
